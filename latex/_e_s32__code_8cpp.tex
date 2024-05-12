@@ -1,0 +1,284 @@
+\doxysection{C\+:/\+Users/yoshi/\+One\+Drive -\/ Universidad Ana G. Mendez/\+Universidad/\+ELEN 442/\+Codigo Proyecto/\+ES32\+\_\+code.cpp File Reference}
+\label{_e_s32__code_8cpp}\index{C:/Users/yoshi/OneDrive -\/ Universidad Ana G. Mendez/Universidad/ELEN 442/Codigo Proyecto/ES32\_code.cpp@{C:/Users/yoshi/OneDrive -\/ Universidad Ana G. Mendez/Universidad/ELEN 442/Codigo Proyecto/ES32\_code.cpp}}
+
+
+This code is in charge of creating the websocket server, and sending the info to the web page.  
+
+
+{\ttfamily \#include $<$Wi\+Fi.\+h$>$}\newline
+{\ttfamily \#include $<$Web\+Sockets\+Server.\+h$>$}\newline
+{\ttfamily \#include $<$Hardware\+Serial.\+h$>$}\newline
+{\ttfamily \#include $<$Web\+Server.\+h$>$}\newline
+{\ttfamily \#include "{}html\+\_\+page.\+h"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ RXp2}~16
+\begin{DoxyCompactList}\small\item\em This gives the function to initialize the server. \end{DoxyCompactList}\item 
+\#define \textbf{ TXp2}~17
+\begin{DoxyCompactList}\small\item\em Declare the pins for UART communication. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Web\+Server \textbf{ server} (80)
+\begin{DoxyCompactList}\small\item\em Create a Web\+Server object with the port 80. \end{DoxyCompactList}\item 
+void \textbf{ Signal} (String, String)
+\begin{DoxyCompactList}\small\item\em Functioh Signal that recieves two strings. \end{DoxyCompactList}\item 
+void \textbf{ setup} ()
+\item 
+void \textbf{ loop} ()
+\item 
+void \textbf{ webpage} ()
+\begin{DoxyCompactList}\small\item\em handle function\+: send webpage to client \end{DoxyCompactList}\item 
+void \textbf{ on\+Web\+Socket\+Event} (uint8\+\_\+t num, WStype\+\_\+t type, uint8\+\_\+t $\ast$payload, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Called when receiving any Web\+Socket Message. \end{DoxyCompactList}\item 
+void \textbf{ signal} (String spot1, String spot2)
+\begin{DoxyCompactList}\small\item\em This function is in charged of compairing the recieve Strings and sending the signal to the web. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \textbf{ ssid} = "{}i\+Phone"{}
+\begin{DoxyCompactList}\small\item\em The id of the wifi. \end{DoxyCompactList}\item 
+const char $\ast$ \textbf{ password} = "{}123456789"{}
+\begin{DoxyCompactList}\small\item\em The password to connect to the wifi. \end{DoxyCompactList}\item 
+Web\+Sockets\+Server \textbf{ web\+Socket} = Web\+Sockets\+Server(81)
+\begin{DoxyCompactList}\small\item\em Create a Web\+Sockets\+Server object with the port 81. \end{DoxyCompactList}\item 
+String \textbf{ p1}
+\begin{DoxyCompactList}\small\item\em Declare Strings p1, p2, JSONtxt y JSONtxt2. \end{DoxyCompactList}\item 
+String \textbf{ p2}
+\item 
+String \textbf{ JSONtxt}
+\item 
+String \textbf{ JSONtxt2}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This code is in charge of creating the websocket server, and sending the info to the web page. 
+
+\begin{DoxyAuthor}{Author}
+Angel G. Fonseca y Luis R. Arzuaga 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2024-\/05-\/09
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2024 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{_e_s32__code_8cpp_ab5a057abf707415c2244120c22c8f78a} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!RXp2@{RXp2}}
+\index{RXp2@{RXp2}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{RXp2}
+{\footnotesize\ttfamily \#define RXp2~16}
+
+
+
+This gives the function to initialize the server. 
+
+This is for the UART communication
+
+This is to send the information to the client
+
+The .h contains the basica webpage
+
+Declare the pins for UART communication \label{_e_s32__code_8cpp_a70f3d9461ee83a1d153b161c6fde58cc} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!TXp2@{TXp2}}
+\index{TXp2@{TXp2}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{TXp2}
+{\footnotesize\ttfamily \#define TXp2~17}
+
+
+
+Declare the pins for UART communication. 
+
+
+
+\doxysubsection{Function Documentation}
+\label{_e_s32__code_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!loop@{loop}}
+\index{loop@{loop}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{loop()}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Reads the info recieve through the UART port until it reaches \textquotesingle{}a\textquotesingle{} and then saves it.
+
+Reads the info recieve through the UART port until it reaches \textquotesingle{}b\textquotesingle{} and then saves it.
+
+Manda la informacion recibida a la funcion que se encargara de comparar los valores y mandar la info a la web. Sends the info stored in spot1 and spot2 to the function that compares the values and sends the info to the web.\label{_e_s32__code_8cpp_aa029b646d66f083b953f61e4f6499993} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!onWebSocketEvent@{onWebSocketEvent}}
+\index{onWebSocketEvent@{onWebSocketEvent}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{onWebSocketEvent()}
+{\footnotesize\ttfamily void on\+Web\+Socket\+Event (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{num,  }\item[{WStype\+\_\+t}]{type,  }\item[{uint8\+\_\+t $\ast$}]{payload,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Called when receiving any Web\+Socket Message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & \\
+\hline
+{\em type} & \\
+\hline
+{\em payload} & \\
+\hline
+{\em length} & \\
+\hline
+\end{DoxyParams}
+Figure out the type of Web\+Socket event
+
+Client has disconnected
+
+New client has connected
+
+Echo text message back to client
+
+For everything else\+: do nothing\label{_e_s32__code_8cpp_a48f3f185be3ea2d153c347a157b38d42} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!server@{server}}
+\index{server@{server}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{server()}
+{\footnotesize\ttfamily Web\+Server server (\begin{DoxyParamCaption}\item[{80}]{ }\end{DoxyParamCaption})}
+
+
+
+Create a Web\+Server object with the port 80. 
+
+\label{_e_s32__code_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!setup@{setup}}
+\index{setup@{setup}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{setup()}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Connect to access point
+
+This function begins the connection to the Wi\+Fi
+
+Unitl the it connects to the wifi it will print dots.
+
+Print that it has connected.
+
+Print the IP address of the server.
+
+On HTTP request for root, provide index.\+html file
+
+Start Web\+Socket Serer and assign callback
+
+UART data\label{_e_s32__code_8cpp_a8e09e3432f9d572e70fa60945fcee837} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!signal@{signal}}
+\index{signal@{signal}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{signal()}
+{\footnotesize\ttfamily void signal (\begin{DoxyParamCaption}\item[{String}]{spot1,  }\item[{String}]{spot2 }\end{DoxyParamCaption})}
+
+
+
+This function is in charged of compairing the recieve Strings and sending the signal to the web. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spot1} & Saves the info of parking 1. \\
+\hline
+{\em spot2} & Saves the info of parking 2. \\
+\hline
+\end{DoxyParams}
+Compares the information with the string "{}\+P2 OC"{}, if they are equal, save "{}\+Occupied"{} in P2, to then save it in a string in JSON style to then send it to the website.
+
+This function is in charge of sending the info to the Java\+Script.
+
+Compares the information with the string "{}\+P2 F"{}, if they are equal, save "{}\+Free"{} in P2, to then save it in a string in JSON style to then send it to the website.
+
+This function is in charge of sending the info to the Java\+Script.
+
+Compares the information with the string "{}\+P1 OC"{}, if they are equal, save "{}\+Occupied"{} in P1, to then save it in a string in JSON style to then send it to the website.
+
+This function is in charge of sending the info to the Java\+Script.
+
+Compares the information with the string "{}\+P1 F"{}, if they are equal, save "{}\+Free"{} in P1, to then save it in a string in JSON style to then send it to the website.
+
+This function is in charge of sending the info to the Java\+Script.\label{_e_s32__code_8cpp_a2554a5aceddfdd318b8f030b4e759da7} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!Signal@{Signal}}
+\index{Signal@{Signal}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{Signal()}
+{\footnotesize\ttfamily void Signal (\begin{DoxyParamCaption}\item[{String}]{,  }\item[{String}]{ }\end{DoxyParamCaption})}
+
+
+
+Functioh Signal that recieves two strings. 
+
+\label{_e_s32__code_8cpp_a26157e0483cdeefa224907465406c0ab} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!webpage@{webpage}}
+\index{webpage@{webpage}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{webpage()}
+{\footnotesize\ttfamily void webpage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+handle function\+: send webpage to client 
+
+
+
+\doxysubsection{Variable Documentation}
+\label{_e_s32__code_8cpp_a00042d91f45829c3c122ec9b778bc1ef} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!JSONtxt@{JSONtxt}}
+\index{JSONtxt@{JSONtxt}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{JSONtxt}
+{\footnotesize\ttfamily String JSONtxt}
+
+\label{_e_s32__code_8cpp_a96cf0f6763165658a5ddc5929e1e69a6} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!JSONtxt2@{JSONtxt2}}
+\index{JSONtxt2@{JSONtxt2}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{JSONtxt2}
+{\footnotesize\ttfamily String JSONtxt2}
+
+\label{_e_s32__code_8cpp_aa168b7dee8525aafff58cb64ab1fdb34} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!p1@{p1}}
+\index{p1@{p1}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{p1}
+{\footnotesize\ttfamily String p1}
+
+
+
+Declare Strings p1, p2, JSONtxt y JSONtxt2. 
+
+\label{_e_s32__code_8cpp_aad61375c8c67a701fb738885b37ee4fd} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!p2@{p2}}
+\index{p2@{p2}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{p2}
+{\footnotesize\ttfamily String p2}
+
+\label{_e_s32__code_8cpp_aa4a2ebcb494493f648ae1e6975672575} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!password@{password}}
+\index{password@{password}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{password}
+{\footnotesize\ttfamily const char$\ast$ password = "{}123456789"{}}
+
+
+
+The password to connect to the wifi. 
+
+\label{_e_s32__code_8cpp_a587ba0cb07f02913598610049a3bbb79} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!ssid@{ssid}}
+\index{ssid@{ssid}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{ssid}
+{\footnotesize\ttfamily const char$\ast$ ssid = "{}i\+Phone"{}}
+
+
+
+The id of the wifi. 
+
+\label{_e_s32__code_8cpp_a5a9d65f1a8d9a12255db818887b5bcd3} 
+\index{ES32\_code.cpp@{ES32\_code.cpp}!webSocket@{webSocket}}
+\index{webSocket@{webSocket}!ES32\_code.cpp@{ES32\_code.cpp}}
+\doxysubsubsection{webSocket}
+{\footnotesize\ttfamily Web\+Sockets\+Server web\+Socket = Web\+Sockets\+Server(81)}
+
+
+
+Create a Web\+Sockets\+Server object with the port 81. 
+

@@ -1,0 +1,314 @@
+\doxysection{C\+:/\+Users/yoshi/\+One\+Drive -\/ Universidad Ana G. Mendez/\+Universidad/\+ELEN 442/\+Codigo Proyecto/\+Arduino\+\_\+\+Mega.cpp File Reference}
+\label{_arduino___mega_8cpp}\index{C:/Users/yoshi/OneDrive -\/ Universidad Ana G. Mendez/Universidad/ELEN 442/Codigo Proyecto/Arduino\_Mega.cpp@{C:/Users/yoshi/OneDrive -\/ Universidad Ana G. Mendez/Universidad/ELEN 442/Codigo Proyecto/Arduino\_Mega.cpp}}
+{\ttfamily \#include $<$New\+Ping.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ trig\+\_\+pk1}~3
+\begin{DoxyCompactList}\small\item\em Trigger pin for sensor 1. \end{DoxyCompactList}\item 
+\#define \textbf{ echo\+\_\+pk1}~4
+\begin{DoxyCompactList}\small\item\em Echo pin for sensor 1. \end{DoxyCompactList}\item 
+\#define \textbf{ trig\+\_\+pk2}~5
+\begin{DoxyCompactList}\small\item\em Trigger pin for sensor 2. \end{DoxyCompactList}\item 
+\#define \textbf{ echo\+\_\+pk2}~6
+\begin{DoxyCompactList}\small\item\em Echo pin for sensor 2. \end{DoxyCompactList}\item 
+\#define \textbf{ trig\+\_\+pk3}~42
+\begin{DoxyCompactList}\small\item\em Trigger pin for sensor 3. \end{DoxyCompactList}\item 
+\#define \textbf{ echo\+\_\+pk3}~43
+\begin{DoxyCompactList}\small\item\em Echo pin for sensor 3. \end{DoxyCompactList}\item 
+\#define \textbf{ trig\+\_\+pk4}~50
+\begin{DoxyCompactList}\small\item\em Trigger pin for sensor 4. \end{DoxyCompactList}\item 
+\#define \textbf{ echo\+\_\+pk4}~51
+\begin{DoxyCompactList}\small\item\em Echo pin for sensor 4. \end{DoxyCompactList}\item 
+\#define \textbf{ max}~7
+\begin{DoxyCompactList}\small\item\em Max is going to save the maximum distance we want the sensors to detect in centimeters. \end{DoxyCompactList}\item 
+\#define \textbf{ ledpin1}~10
+\begin{DoxyCompactList}\small\item\em Pins for the led in parking 1. \end{DoxyCompactList}\item 
+\#define \textbf{ ledpin2}~12
+\begin{DoxyCompactList}\small\item\em Pins for the led in parking 2. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ verify\+\_\+parking} (New\+Ping, New\+Ping)
+\begin{DoxyCompactList}\small\item\em Funtion to verify if the parking is occuppied. \end{DoxyCompactList}\item 
+New\+Ping \textbf{ sonar1} (\textbf{ trig\+\_\+pk1}, \textbf{ echo\+\_\+pk1}, \textbf{ max})
+\begin{DoxyCompactList}\small\item\em Create an object of type New\+Ping named sonar1, with the pins and the maximum distance. \end{DoxyCompactList}\item 
+New\+Ping \textbf{ sonar2} (\textbf{ trig\+\_\+pk2}, \textbf{ echo\+\_\+pk2}, \textbf{ max})
+\begin{DoxyCompactList}\small\item\em Create an object of type New\+Ping named sonar2, with the pins and the maximum distance. \end{DoxyCompactList}\item 
+New\+Ping \textbf{ sonar3} (\textbf{ trig\+\_\+pk3}, \textbf{ echo\+\_\+pk3}, \textbf{ max})
+\begin{DoxyCompactList}\small\item\em Create an object of type New\+Ping named sonar3, with the pins and the maximum distance. \end{DoxyCompactList}\item 
+New\+Ping \textbf{ sonar4} (\textbf{ trig\+\_\+pk4}, \textbf{ echo\+\_\+pk4}, \textbf{ max})
+\begin{DoxyCompactList}\small\item\em Create an object of type New\+Ping named sonar4, with the pins and the maximum distance. \end{DoxyCompactList}\item 
+void \textbf{ setup} ()
+\begin{DoxyCompactList}\small\item\em Here the Seria.\+begin is done and also initialize the pins for the leds as output pins. \end{DoxyCompactList}\item 
+void \textbf{ loop} ()
+\begin{DoxyCompactList}\small\item\em void loop of the code codigo \end{DoxyCompactList}\item 
+bool \textbf{ verify\+\_\+\+Parking} (New\+Ping s1, New\+Ping s2)
+\begin{DoxyCompactList}\small\item\em Boolean function that verifies if both sensors are activated. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ distance\+\_\+left}
+\begin{DoxyCompactList}\small\item\em Saves the distance of the right sensor. \end{DoxyCompactList}\item 
+int \textbf{ distance\+\_\+right}
+\begin{DoxyCompactList}\small\item\em Saves the distance of the left sensor. \end{DoxyCompactList}\item 
+bool \textbf{ park1}
+\begin{DoxyCompactList}\small\item\em Bool that saves true or false if the parking 1 is occuppied. \end{DoxyCompactList}\item 
+bool \textbf{ park2}
+\begin{DoxyCompactList}\small\item\em Bool that saves true or false if the parking 2 is occuppied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\label{_arduino___mega_8cpp_a8a335400231b5ab7b7389ed19422cf09} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!echo\_pk1@{echo\_pk1}}
+\index{echo\_pk1@{echo\_pk1}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{echo\_pk1}
+{\footnotesize\ttfamily \#define echo\+\_\+pk1~4}
+
+
+
+Echo pin for sensor 1. 
+
+\label{_arduino___mega_8cpp_ab62aea3273f5a167762f8e10594103b2} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!echo\_pk2@{echo\_pk2}}
+\index{echo\_pk2@{echo\_pk2}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{echo\_pk2}
+{\footnotesize\ttfamily \#define echo\+\_\+pk2~6}
+
+
+
+Echo pin for sensor 2. 
+
+\label{_arduino___mega_8cpp_a44a84a771bd11620d3048e30fff53ad9} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!echo\_pk3@{echo\_pk3}}
+\index{echo\_pk3@{echo\_pk3}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{echo\_pk3}
+{\footnotesize\ttfamily \#define echo\+\_\+pk3~43}
+
+
+
+Echo pin for sensor 3. 
+
+\label{_arduino___mega_8cpp_a8555da7443d404cd810483f7a4ae3986} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!echo\_pk4@{echo\_pk4}}
+\index{echo\_pk4@{echo\_pk4}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{echo\_pk4}
+{\footnotesize\ttfamily \#define echo\+\_\+pk4~51}
+
+
+
+Echo pin for sensor 4. 
+
+\label{_arduino___mega_8cpp_af3e41c4b19adaf59265c29c44e237377} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!ledpin1@{ledpin1}}
+\index{ledpin1@{ledpin1}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{ledpin1}
+{\footnotesize\ttfamily \#define ledpin1~10}
+
+
+
+Pins for the led in parking 1. 
+
+\label{_arduino___mega_8cpp_a7c1f83d838cd982acc79ed00dd0f1204} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!ledpin2@{ledpin2}}
+\index{ledpin2@{ledpin2}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{ledpin2}
+{\footnotesize\ttfamily \#define ledpin2~12}
+
+
+
+Pins for the led in parking 2. 
+
+\label{_arduino___mega_8cpp_a2e1da8593b0244d8e9e3b84ef7b35e73} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!max@{max}}
+\index{max@{max}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{max}
+{\footnotesize\ttfamily \#define max~7}
+
+
+
+Max is going to save the maximum distance we want the sensors to detect in centimeters. 
+
+\label{_arduino___mega_8cpp_a8b3cf9d627b3d19e435a99db59b31f26} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!trig\_pk1@{trig\_pk1}}
+\index{trig\_pk1@{trig\_pk1}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{trig\_pk1}
+{\footnotesize\ttfamily \#define trig\+\_\+pk1~3}
+
+
+
+Trigger pin for sensor 1. 
+
+\label{_arduino___mega_8cpp_aa298909d1b6923acd54c33aef443e0a6} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!trig\_pk2@{trig\_pk2}}
+\index{trig\_pk2@{trig\_pk2}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{trig\_pk2}
+{\footnotesize\ttfamily \#define trig\+\_\+pk2~5}
+
+
+
+Trigger pin for sensor 2. 
+
+\label{_arduino___mega_8cpp_a1c699dc38def5a2e5c9c2e3616a0ee57} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!trig\_pk3@{trig\_pk3}}
+\index{trig\_pk3@{trig\_pk3}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{trig\_pk3}
+{\footnotesize\ttfamily \#define trig\+\_\+pk3~42}
+
+
+
+Trigger pin for sensor 3. 
+
+\label{_arduino___mega_8cpp_a0de02a652b90349700bdca02a9500fd2} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!trig\_pk4@{trig\_pk4}}
+\index{trig\_pk4@{trig\_pk4}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{trig\_pk4}
+{\footnotesize\ttfamily \#define trig\+\_\+pk4~50}
+
+
+
+Trigger pin for sensor 4. 
+
+
+
+\doxysubsection{Function Documentation}
+\label{_arduino___mega_8cpp_afe461d27b9c48d5921c00d521181f12f} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!loop@{loop}}
+\index{loop@{loop}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{loop()}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+void loop of the code codigo 
+
+In the main loop of the code, the function \doxyref{verify\+\_\+parking()}{p.}{_arduino___mega_8cpp_aa2940fa47d17ab13fa22d83d8d0321a8} is called and the respective sonar objects representing the parking are passed to it. This function then returns a boolean which is stored in park1 and park2, which respectively symbolize parking spots 1 and 2. These boolean variables are inserted into if statements that will print "{}\+P1 OCa"{} or "{}\+P1 Fa"{}, which are then passed through UART ports to the ESP32 and also turn on or off LEDs indicating whether the parking spot is occupied. This process is repeated once more for the second boolean to decide whether to print "{}\+P2 OCb"{} or "{}\+P2 Fb"{} on the serial port. These printed strings have the letters \textquotesingle{}a\textquotesingle{} and \textquotesingle{}b\textquotesingle{} at the end so that the ESP32 has reference as to where exactly it needs to read the received string. \label{_arduino___mega_8cpp_a4fc01d736fe50cf5b977f755b675f11d} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!setup@{setup}}
+\index{setup@{setup}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{setup()}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Here the Seria.\+begin is done and also initialize the pins for the leds as output pins. 
+
+\label{_arduino___mega_8cpp_ab6171e3acc4f6dbdc54cff8cacac5f60} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!sonar1@{sonar1}}
+\index{sonar1@{sonar1}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{sonar1()}
+{\footnotesize\ttfamily New\+Ping sonar1 (\begin{DoxyParamCaption}\item[{\textbf{ trig\+\_\+pk1}}]{,  }\item[{\textbf{ echo\+\_\+pk1}}]{,  }\item[{\textbf{ max}}]{ }\end{DoxyParamCaption})}
+
+
+
+Create an object of type New\+Ping named sonar1, with the pins and the maximum distance. 
+
+\label{_arduino___mega_8cpp_ae157b7273bb1acd065e5e11e3bcab3e3} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!sonar2@{sonar2}}
+\index{sonar2@{sonar2}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{sonar2()}
+{\footnotesize\ttfamily New\+Ping sonar2 (\begin{DoxyParamCaption}\item[{\textbf{ trig\+\_\+pk2}}]{,  }\item[{\textbf{ echo\+\_\+pk2}}]{,  }\item[{\textbf{ max}}]{ }\end{DoxyParamCaption})}
+
+
+
+Create an object of type New\+Ping named sonar2, with the pins and the maximum distance. 
+
+\label{_arduino___mega_8cpp_a320e25680d02ad501eced849522bed76} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!sonar3@{sonar3}}
+\index{sonar3@{sonar3}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{sonar3()}
+{\footnotesize\ttfamily New\+Ping sonar3 (\begin{DoxyParamCaption}\item[{\textbf{ trig\+\_\+pk3}}]{,  }\item[{\textbf{ echo\+\_\+pk3}}]{,  }\item[{\textbf{ max}}]{ }\end{DoxyParamCaption})}
+
+
+
+Create an object of type New\+Ping named sonar3, with the pins and the maximum distance. 
+
+\label{_arduino___mega_8cpp_aa2063f7fa3eb8d3f6f2496bb661d5134} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!sonar4@{sonar4}}
+\index{sonar4@{sonar4}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{sonar4()}
+{\footnotesize\ttfamily New\+Ping sonar4 (\begin{DoxyParamCaption}\item[{\textbf{ trig\+\_\+pk4}}]{,  }\item[{\textbf{ echo\+\_\+pk4}}]{,  }\item[{\textbf{ max}}]{ }\end{DoxyParamCaption})}
+
+
+
+Create an object of type New\+Ping named sonar4, with the pins and the maximum distance. 
+
+\label{_arduino___mega_8cpp_afe6ba0dbff312333d161e987e78f0424} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!verify\_Parking@{verify\_Parking}}
+\index{verify\_Parking@{verify\_Parking}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{verify\_Parking()}
+{\footnotesize\ttfamily bool verify\+\_\+\+Parking (\begin{DoxyParamCaption}\item[{New\+Ping}]{s1,  }\item[{New\+Ping}]{s2 }\end{DoxyParamCaption})}
+
+
+
+Boolean function that verifies if both sensors are activated. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s1} & Represents the first ultrasonic sensor. \\
+\hline
+{\em s2} & Represents the second ultrasonic sensor. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true Returns true if both sensors are activated at the same time. 
+
+false Retunr false if at least one of the sensors is not active.
+\end{DoxyReturn}
+This function receives the two New\+Ping objects, which are the ultrasonic sensors, and creates a boolean variable called \textquotesingle{}temperera\textquotesingle{} to return it as the result. Using the global integers \textquotesingle{}distance\+\_\+left\textquotesingle{} and \textquotesingle{}distance\+\_\+right\textquotesingle{}, we store the result of the .ping\+\_\+cm() function from the New\+Ping library, which gives us the calculated distance in centimeters that the sensor has detected. These values are then stored to be compared later in an if statement, where both distances must be true to enter. For this, both distances must be less than or equal to the maximum distance and greater than zero. If this is the case, the parking space is considered occupied. \label{_arduino___mega_8cpp_aa2940fa47d17ab13fa22d83d8d0321a8} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!verify\_parking@{verify\_parking}}
+\index{verify\_parking@{verify\_parking}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{verify\_parking()}
+{\footnotesize\ttfamily bool verify\+\_\+parking (\begin{DoxyParamCaption}\item[{New\+Ping}]{,  }\item[{New\+Ping}]{ }\end{DoxyParamCaption})}
+
+
+
+Funtion to verify if the parking is occuppied. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\label{_arduino___mega_8cpp_aa1f2b44056e1de3523e8eb0e664099b0} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!distance\_left@{distance\_left}}
+\index{distance\_left@{distance\_left}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{distance\_left}
+{\footnotesize\ttfamily int distance\+\_\+left}
+
+
+
+Saves the distance of the right sensor. 
+
+\label{_arduino___mega_8cpp_a6ed53ea578075781722fff318d431d18} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!distance\_right@{distance\_right}}
+\index{distance\_right@{distance\_right}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{distance\_right}
+{\footnotesize\ttfamily int distance\+\_\+right}
+
+
+
+Saves the distance of the left sensor. 
+
+\label{_arduino___mega_8cpp_a1e8a555f9a1fc610af4214719b4623bd} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!park1@{park1}}
+\index{park1@{park1}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{park1}
+{\footnotesize\ttfamily bool park1}
+
+
+
+Bool that saves true or false if the parking 1 is occuppied. 
+
+\label{_arduino___mega_8cpp_a52c002a51841df7c3d69f6eabb8cdd35} 
+\index{Arduino\_Mega.cpp@{Arduino\_Mega.cpp}!park2@{park2}}
+\index{park2@{park2}!Arduino\_Mega.cpp@{Arduino\_Mega.cpp}}
+\doxysubsubsection{park2}
+{\footnotesize\ttfamily bool park2}
+
+
+
+Bool that saves true or false if the parking 2 is occuppied. 
+
